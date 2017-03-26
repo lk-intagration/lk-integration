@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
+    'brandName' => 'LK Integration',
+    'adminEmail' => 'lk-intagration@mail.ru',
 ];
