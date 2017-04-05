@@ -4,7 +4,7 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\db\ActiveQuery;
 
-class User extends ActiveRecord
+class Client extends ActiveRecord
 {
     public function attributeLabels()
     {
@@ -18,16 +18,16 @@ class User extends ActiveRecord
     
     public function getUserClients() 
     {
-        return $this->hasMany(UserClient::className(), ['user_id' => 'id']);
+        return $this->hasMany(UserClient::className(), ['client_id' => 'id']);
     }
     
-    public function getClients() 
+    public function getUsers() 
     {
-        return $this->hasMany(Client::className(), ['id' => 'client_id'])->via('userClients');
+        return $this->hasMany(User::className(), ['id' => 'user_id'])->via('userClients');
     }
 }
 
-class UserQuery extends ActiveQuery
+class ClientQuery extends ActiveQuery
 {
     
 }
